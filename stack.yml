@@ -1,0 +1,33 @@
+name: senaite
+title: SENAITE LIMS
+icon: senaite
+category: collaboration
+
+services:
+- name: senaite
+  title: SENAITE LIMS
+  service: senaite
+  required: true
+  main: true
+  links:
+  - name: zeo
+    service: zeo
+  - name: sendmail
+    service: opensmtpd
+
+# SENAITE's database and uploaded files, served to every SENAITE replica.
+- name: zeo
+  title: SENAITE database (ZEO)
+  service: senaite-zeo
+  required: true
+  volumes:
+  - name: data
+    size: 20
+
+# SENAITE sends password resets, notifications and published results by
+# email. When enabled, it becomes SENAITE's mail server unless one was
+# already set in SENAITE's mail settings.
+- name: opensmtpd
+  title: OpenSMTPD
+  service: opensmtpd
+  disabled: true

@@ -1,6 +1,7 @@
 name: senaite
 title: SENAITE LIMS
 icon: senaite
+docs: https://wodby.com/docs/2.0/stacks/catalog/senaite/
 category: collaboration
 
 services:
